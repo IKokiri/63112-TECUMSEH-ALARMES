@@ -26,6 +26,44 @@ class FalhaProcedimentoModel extends Model{
 
     }
 
+    function procedimentoFalhaEquipamento($data){
+        
+        $this->populate($data);
+        
+        $sql = "SELECT 
+                    fal_pro.ordem,
+                    fal_pro.procedimento,
+                    equ.tag AS tag_equipamento,
+                    equ.equipamento,
+                    equ_fal.observacao,
+                    fal.tag AS tag_falha,
+                    fal.falha
+                FROM
+                    ".$this->table." fal_pro
+                        INNER JOIN
+                    equipamento_falhas equ_fal ON fal_pro.id_falha = equ_fal.id_falha
+                        INNER JOIN
+                    equipamentos equ ON equ_fal.id_equipamento = equ.id
+                        INNER JOIN
+                    falhas fal ON equ_fal.id_falha = fal.id
+                WHERE
+                    fal_pro.id_falha = :id_falha
+                        AND equ_fal.id_equipamento = :id_equipamento
+                ORDER BY fal_pro.ordem ASC";
+
+                $query = $this->conn->prepare($sql);
+        
+                $query->bindValue(':id_falha', $this->id_falha, PDO::PARAM_STR);
+                $query->bindValue(':id_equipamento', $this->id_equipamento, PDO::PARAM_STR);
+                
+                $result = Database::executa($query); 
+
+        $this->log->setInfo("Buscou ($this->model read) os registros");
+
+        return $result;
+
+    }
+    
     function readLazy(){
         
         $sql = "SELECT fal_pro.*,fal.tag,fal.falha FROM ".$this->table." fal_pro

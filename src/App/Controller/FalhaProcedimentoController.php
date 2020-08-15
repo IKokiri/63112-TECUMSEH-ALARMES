@@ -22,6 +22,11 @@ class FalhaProcedimentoController {
         return $this->model->read();
     }
 
+    function procedimentoFalhaEquipamento($data){
+        
+        return $this->model->procedimentoFalhaEquipamento($data);
+    }
+    
     function readLazy($data){
         
         return $this->model->readLazy();

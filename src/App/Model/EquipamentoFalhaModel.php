@@ -50,6 +50,36 @@ class EquipamentoFalhaModel extends Model{
 
     }
 
+    function readFalhasEquipamento($data){
+        
+        
+        $this->populate($data);
+        
+        $sql = "SELECT 
+                    fal.id,fal.tag, fal.falha
+                FROM
+                    tecumsehalarmes63112.equipamento_falhas equ_fal
+                    INNER JOIN falhas fal
+                        on equ_fal.id_falha = fal.id
+                WHERE
+                    id_equipamento = :id_equipamento";
+
+ 
+                $query = $this->conn->prepare($sql);
+
+                $query->bindValue(':id_equipamento', $this->id_equipamento, PDO::PARAM_STR);
+
+                $result = Database::executa($query);   
+
+                $this->log->setInfo("Buscou ($this->model readFalhasEquipamento) o registro $this->id_equipamento");
+
+
+        $this->log->setInfo("Buscou ($this->model read) os registros");
+
+        return $result;
+
+    }
+
     function getId($data){
         
         $this->populate($data);

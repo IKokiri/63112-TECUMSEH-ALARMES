@@ -22,6 +22,12 @@ class EquipamentoFalhaController {
         return $this->model->read();
     }
 
+    function readFalhasEquipamento($data){
+        
+        return $this->model->readFalhasEquipamento($data);
+    }
+    
+
     function readLazy($data){
         
         return $this->model->readLazy();
