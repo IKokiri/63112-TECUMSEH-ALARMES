@@ -34,6 +34,9 @@
                 <a class="nav-link" href="/front/equipamento_falha.php">Falhas do Equipamento</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/front/falha_procedimento.php">Procedimento Falhas</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link text-danger" href="/front/">Sair</a>
               </li>
           </ul>
