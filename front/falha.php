@@ -14,7 +14,7 @@
         <thead>
           <tr>
             <th scope="col">TAG</th>
-            <th scope="col">NOME EQUIPAMENTO</th>
+            <th scope="col">Falha</th>
             <th scope="col">Alterar</th>
             <th scope="col">Remover</th>
           </tr>
@@ -28,7 +28,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Equipamento</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Falha</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -43,8 +43,8 @@
               </div>
 
               <div class="form-group col-md-6">
-                <label for="inputEmail4">EQUIPAMENTO</label>
-                <input type="text" class="form-control" id="equipamento">
+                <label for="inputEmail4">Falha</label>
+                <input type="text" class="form-control" id="falha">
               </div>
               
             </div>
@@ -62,6 +62,6 @@
   <?php
       include "footer.php"
     ?>
-    <script src="./js/equipamento.js"></script>
+    <script src="./js/falha.js"></script>
 </body>
 </html>
