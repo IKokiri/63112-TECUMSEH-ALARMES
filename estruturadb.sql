@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `equipamento_falhas`
+--
+
+DROP TABLE IF EXISTS `equipamento_falhas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `equipamento_falhas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_equipamento` int NOT NULL,
+  `id_falha` int NOT NULL,
+  `observacao` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `criado` datetime DEFAULT NULL,
+  `editado` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `equipamento_falhas`
+--
+
+LOCK TABLES `equipamento_falhas` WRITE;
+/*!40000 ALTER TABLE `equipamento_falhas` DISABLE KEYS */;
+INSERT INTO `equipamento_falhas` VALUES (5,5,5,'obs 1a','2020-08-15 13:50:45','2020-08-15 14:16:00'),(6,4,6,'obs 1asdfsdfsdf','2020-08-15 13:54:21','2020-08-15 14:16:06');
+/*!40000 ALTER TABLE `equipamento_falhas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `equipamentos`
 --
 
@@ -29,7 +57,7 @@ CREATE TABLE `equipamentos` (
   `criado` datetime DEFAULT NULL,
   `editado` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,8 +66,62 @@ CREATE TABLE `equipamentos` (
 
 LOCK TABLES `equipamentos` WRITE;
 /*!40000 ALTER TABLE `equipamentos` DISABLE KEYS */;
-INSERT INTO `equipamentos` VALUES (2,'123','123','2020-08-15 12:19:19',NULL),(3,'qweqweq','qwe','2020-08-15 12:19:33',NULL);
+INSERT INTO `equipamentos` VALUES (4,'EQUP1','EQUIPAMENTO 1','2020-08-15 13:33:46',NULL),(5,'EQUP2','EQUIPAMENTO 2','2020-08-15 13:33:56',NULL);
 /*!40000 ALTER TABLE `equipamentos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `falha_procedimentos`
+--
+
+DROP TABLE IF EXISTS `falha_procedimentos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `falha_procedimentos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_falha` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `ordem` int NOT NULL,
+  `procedimento` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `criado` datetime DEFAULT NULL,
+  `editado` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `falha_procedimentos`
+--
+
+LOCK TABLES `falha_procedimentos` WRITE;
+/*!40000 ALTER TABLE `falha_procedimentos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `falha_procedimentos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `falhas`
+--
+
+DROP TABLE IF EXISTS `falhas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `falhas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tag` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `falha` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `criado` datetime DEFAULT NULL,
+  `editado` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `falhas`
+--
+
+LOCK TABLES `falhas` WRITE;
+/*!40000 ALTER TABLE `falhas` DISABLE KEYS */;
+INSERT INTO `falhas` VALUES (5,'FLH1','FALHA 1','2020-08-15 13:34:09',NULL),(6,'FLH2','FALHA 2','2020-08-15 13:34:19',NULL);
+/*!40000 ALTER TABLE `falhas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -79,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-15 12:28:28
+-- Dump completed on 2020-08-15 14:37:34
