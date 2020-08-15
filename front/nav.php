@@ -25,6 +25,12 @@
                 </div>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/front/equipamento.php">Equipamentos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/front/falha.php">Falhas</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link text-danger" href="/front/">Sair</a>
               </li>
           </ul>
