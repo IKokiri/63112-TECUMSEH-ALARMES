@@ -5,7 +5,7 @@ namespace App\DAO;
 class InfoDB {
 
     private $host = "localhost";
-    private $database = "coc";
+    private $database = "tecumsehalarmes63112";
     private $user = "root";
     private $password = "LDeveloper#123d";
 
