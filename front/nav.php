@@ -40,6 +40,10 @@
                 <a class="nav-link" href="/front/procedimento.php">Procedimentos</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/front/rel_procediments_falha.php">Relatório Procedimentos Falhas
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link text-danger" href="/front/">Sair</a>
               </li>
           </ul>
