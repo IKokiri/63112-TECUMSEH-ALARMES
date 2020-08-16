@@ -15,8 +15,8 @@
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">            
-          <li class="nav-item">
+          <ul class="navbar-nav mr-auto menus">            
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="/front/usuario.php">Usuários</a>
               </li>
               <li class="nav-item">
@@ -40,7 +40,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link text-danger" href="/front/">Sair</a>
-              </li>
+              </li> -->
           </ul>
         </div>
         <div class="pull-right">

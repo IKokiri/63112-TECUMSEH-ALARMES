@@ -15,13 +15,15 @@ $modulos=[
             [
                 'nome'=>"Equipamentos",
                 'caminho'=>"/front/equipamento.php",
+                'permissao'=>1
             ],
             [
                 'nome'=>"Procedimentos",
                 'caminho'=>"/front/procedimento.php",
+                'permissao'=>0
             ]
         ],
-        'permissao' => 1,
+        'permissao' => 0,
         'funcoes' => [
                 'create'=>1,
                 'read'=>0,
@@ -35,6 +37,7 @@ $modulos=[
             [
                 'nome'=>"Falhas do Equipamento",
                 'caminho'=>"/front/equipamento_falha.php",
+                'permissao'=>1
             ]
         ],
         'permissao' => 1,
@@ -52,6 +55,7 @@ $modulos=[
             [
                 'nome'=>"Falhas",
                 'caminho'=>"/front/falha.php",
+                'permissao'=>1
             ]
         ],
         'permissao' => 1,
@@ -68,10 +72,12 @@ $modulos=[
             [
                 'nome'=>"Procedimento Falhas",
                 'caminho'=>"/front/falha_procedimento.php",
+                'permissao'=>1
             ],
             [
                 'nome'=>"Relatório Procedimentos Falhas",
                 'caminho'=>"/front/rel_procediments_falha.php",
+                'permissao'=>1
             ]
         ],
         'permissao' => 1,
@@ -91,6 +97,7 @@ $modulos=[
             [
                 'nome'=>"Usuários",
                 'caminho'=>"/front/usuario.php",
+                'permissao'=>1
             ]
         ],
         'permissao' => 1,
@@ -118,7 +125,10 @@ if(!$logado['count']){
 
 
 if($modulos[$class]['permissao'] > $dadosLogado['permissao'] && $modulos[$class]['funcoes'][$method] > $dadosLogado['permissao']){
-    die("Sem permissão");
+    $result['permissoes'] = $modulos;
+    $result['atenção'] = "Sem permissão";
+    echo json_encode($result);
+    die;
 }
 
 $namespace = "App\Controller\\".$class;
@@ -127,7 +137,8 @@ $class = new $namespace;
 
 $result = call_user_func_array(array($class, $method), array($params));
 
+$result['permissaoLogado'] = $dadosLogado['permissao'];
 $result['user'] = $_SESSION['email'];
-
+$result['permissoes'] = $modulos;
 echo json_encode($result);
 
