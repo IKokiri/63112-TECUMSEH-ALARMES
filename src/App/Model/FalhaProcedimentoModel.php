@@ -58,7 +58,37 @@ class FalhaProcedimentoModel extends Model{
                 
                 $result = Database::executa($query); 
 
-        $this->log->setInfo("Buscou ($this->model read) os registros");
+        $this->log->setInfo("Buscou ($this->model procedimentoFalhaEquipamento) os registros");
+
+        return $result;
+
+    }
+
+    function procedimentosFalhas(){
+        
+        $sql = "SELECT 
+                    equ.tag AS tag_equipamento,
+                    equ.equipamento,
+                    fal.tag AS tag_falha,
+                    fal.falha,
+                    equ_fal.observacao,
+                    fal_pro.ordem,
+                    fal_pro.procedimento
+                FROM
+                    ".$this->table."  fal_pro
+                        INNER JOIN
+                    equipamento_falhas equ_fal ON fal_pro.id_falha = equ_fal.id_falha
+                        INNER JOIN
+                    equipamentos equ ON equ_fal.id_equipamento = equ.id
+                        INNER JOIN
+                    falhas fal ON equ_fal.id_falha = fal.id
+                    order by tag_equipamento, tag_falha, ordem";
+
+                $query = $this->conn->prepare($sql);
+                
+                $result = Database::executa($query); 
+
+        $this->log->setInfo("Buscou ($this->model procedimentosFalhas) os registros");
 
         return $result;
 
