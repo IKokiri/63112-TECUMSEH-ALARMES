@@ -30,7 +30,7 @@ CREATE TABLE `equipamento_falhas` (
   `criado` datetime DEFAULT NULL,
   `editado` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `equipamento_falhas` (
 
 LOCK TABLES `equipamento_falhas` WRITE;
 /*!40000 ALTER TABLE `equipamento_falhas` DISABLE KEYS */;
-INSERT INTO `equipamento_falhas` VALUES (5,5,5,'obs 1a','2020-08-15 13:50:45','2020-08-15 14:16:00'),(6,4,6,'obs 1asdfsdfsdf','2020-08-15 13:54:21','2020-08-15 14:16:06');
+INSERT INTO `equipamento_falhas` VALUES (5,5,5,'obs 1a','2020-08-15 13:50:45','2020-08-15 14:16:00'),(6,4,6,'obs equip1 falha 2\n','2020-08-15 13:54:21','2020-08-15 18:49:11'),(9,4,5,'obs equi1 falha 1\n','2020-08-15 18:48:59','2020-08-15 19:47:43');
 /*!40000 ALTER TABLE `equipamento_falhas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +56,8 @@ CREATE TABLE `equipamentos` (
   `equipamento` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `criado` datetime DEFAULT NULL,
   `editado` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `equipamento_UNIQUE` (`equipamento`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -85,7 +86,7 @@ CREATE TABLE `falha_procedimentos` (
   `criado` datetime DEFAULT NULL,
   `editado` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +95,7 @@ CREATE TABLE `falha_procedimentos` (
 
 LOCK TABLES `falha_procedimentos` WRITE;
 /*!40000 ALTER TABLE `falha_procedimentos` DISABLE KEYS */;
+INSERT INTO `falha_procedimentos` VALUES (9,'6',2,'1231231111','2020-08-15 17:33:09','2020-08-15 19:06:21'),(10,'6',1,'1231231111123asdada asdasd','2020-08-15 17:57:22','2020-08-15 19:06:18'),(11,'5',1,'Prc falha1','2020-08-15 19:06:41',NULL);
 /*!40000 ALTER TABLE `falha_procedimentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,8 +112,9 @@ CREATE TABLE `falhas` (
   `falha` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `criado` datetime DEFAULT NULL,
   `editado` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tag_UNIQUE` (`tag`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,8 +141,9 @@ CREATE TABLE `usuarios` (
   `criado` datetime DEFAULT NULL,
   `editado` datetime DEFAULT NULL,
   `permissao` int NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +152,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (11,'lz','1234','2020-08-15 11:40:15',NULL,0);
+INSERT INTO `usuarios` VALUES (11,'lz','lz','2020-08-15 11:40:15','2020-08-16 12:23:44',0),(12,'rn','rn','2020-08-16 12:23:38',NULL,1),(14,'la','la','2020-08-16 17:38:09',NULL,0);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -161,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-15 14:37:34
+-- Dump completed on 2020-08-16 17:38:59
