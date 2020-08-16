@@ -13,7 +13,7 @@
     <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">Email</th>
+            <th scope="col">Usuário</th>
             <th scope="col">Permissao</th>
             <th scope="col">Alterar</th>
             <th scope="col">Remover</th>
@@ -38,7 +38,7 @@
           <form>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">E-Mail</label>
+                <label for="inputEmail4">Usuário</label>
                 <input type="text" class="form-control" id="email">
               </div>
 
