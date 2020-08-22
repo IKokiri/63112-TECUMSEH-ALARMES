@@ -26,8 +26,8 @@ class Log {
     
    
     public function setInfo($log) {
-        
-        $this->logInfo->info($this->user." ".$log);
+        //log desativado
+        // $this->logInfo->info($this->user." ".$log);
 
     }
 

@@ -19,7 +19,7 @@ $(document).ready(function(){
         for(p in per){
             telas = per[p].tela
             for(t in telas){
-                if(permissaoLogado != telas[t].permissao){
+                if(permissaoLogado < telas[t].permissao){
                     continue;
                 }
                 menus += `<li class="nav-item">
