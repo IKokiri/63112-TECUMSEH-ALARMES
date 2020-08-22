@@ -145,8 +145,8 @@ function grid_principal(){
                     <td>${dados[linha].tag} - ${dados[linha].falha}</td>
                     <td>${dados[linha].ordem}</td>
                     <td>${dados[linha].procedimento}</td>
-                    <td data-id="${dados[linha].id}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
-                    <td data-id="${dados[linha].id}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
+                    <td class="text-center" data-id="${dados[linha].id}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
+                    <td class="text-center" data-id="${dados[linha].id}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
                 </tr>
             `
         }

@@ -3,9 +3,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<br>
 <body>
-    
+    <div class="col-10 offset-1">
     <form>
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -21,15 +21,17 @@
       </div>
     </form>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
         <thead>
           <tr>
-            <th scope="col" id="titulo_procedimento"></th>
+            <th scope="col" class="text-center" id="titulo_procedimento"></th>
           </tr>
         </thead>
         <tbody class="grid">
         </tbody>
       </table>
+    </div>
+    
 
 <!-- Modal -->
 <div class="modal fade" id="modal_principal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

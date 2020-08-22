@@ -15,6 +15,9 @@
       #abrir_modal{
         margin:1%
       }
+      #btnExport{
+        margin:1%
+      }
       .footer {
           position: absolute;
           bottom: 0;
