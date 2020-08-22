@@ -109,12 +109,17 @@ function grid_principal(){
     .then(data => {        
         grid = ""
         dados = data.result_array
+
+        per[0] = "Padrão";
+        per[1] = "Adminsitrador";
+
         for(linha in dados){
+
             grid += 
             `
                 <tr>
                     <td>${dados[linha].email}</td>
-                    <td>${dados[linha].permissao}</td>
+                    <td>${per[dados[linha].permissao]}</td>
                     <td data-id="${dados[linha].id}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
                     <td data-id="${dados[linha].id}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
                 </tr>
