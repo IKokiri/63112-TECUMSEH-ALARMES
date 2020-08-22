@@ -120,8 +120,8 @@ function grid_principal(){
                 <tr>
                     <td>${dados[linha].email}</td>
                     <td>${per[dados[linha].permissao]}</td>
-                    <td data-id="${dados[linha].id}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
-                    <td data-id="${dados[linha].id}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
+                    <td class="text-center" data-id="${dados[linha].id}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
+                    <td class="text-center" data-id="${dados[linha].id}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
                 </tr>
             `
         }

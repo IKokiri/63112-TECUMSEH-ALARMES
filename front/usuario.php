@@ -10,13 +10,13 @@
         +
     </button>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
         <thead>
           <tr>
             <th scope="col">Usuário</th>
-            <th scope="col">Permissao</th>
-            <th scope="col">Alterar</th>
-            <th scope="col">Remover</th>
+            <th scope="col">Permissão</th>
+            <th  class="text-center" scope="col">Alterar</th>
+            <th  class="text-center" scope="col">Remover</th>
           </tr>
         </thead>
         <tbody class="grid">
