@@ -16,31 +16,6 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto menus">            
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="/front/usuario.php">Usuários</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/front/equipamento.php">Equipamentos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/front/falha.php">Falhas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/front/equipamento_falha.php">Falhas do Equipamento</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/front/falha_procedimento.php">Procedimento Falhas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/front/procedimento.php">Procedimentos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/front/rel_procediments_falha.php">Relatório Procedimentos Falhas
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-danger" href="/front/">Sair</a>
-              </li> -->
           </ul>
         </div>
         <div class="pull-right">
