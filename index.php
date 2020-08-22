@@ -10,17 +10,29 @@ $logado = $login->verificarLogado();
 $dadosLogado = $logado['result_array'][0];
 
 $modulos=[
+    "UsuarioController"=>[
+        'tela'=>[
+            [
+                'nome'=>"Usuários",
+                'caminho'=>"/front/usuario.php",
+                'permissao'=>1
+            ]
+        ],
+        'permissao' => 1,
+        'funcoes' => [
+                'create'=>1,
+                'read'=>1,
+                'getId'=>1,
+                'update'=>1,
+                'delete'=>1
+            ]
+    ],
     "EquipamentoController"=>[
         'tela'=>[
             [
                 'nome'=>"Equipamentos",
                 'caminho'=>"/front/equipamento.php",
                 'permissao'=>1
-            ],
-            [
-                'nome'=>"Procedimentos",
-                'caminho'=>"/front/procedimento.php",
-                'permissao'=>0
             ]
         ],
         'permissao' => 0,
@@ -32,6 +44,14 @@ $modulos=[
                 'delete'=>1
             ]
     ],
+    "FalhaController"=>[
+        'tela'=>[
+            [
+                'nome'=>"Falhas",
+                'caminho'=>"/front/falha.php",
+                'permissao'=>1
+            ]
+        ],
     "EquipamentoFalhaController"=>[
         'tela'=>[
             [
@@ -50,14 +70,6 @@ $modulos=[
                 'readFalhasEquipamento'=>0
             ]
     ],
-    "FalhaController"=>[
-        'tela'=>[
-            [
-                'nome'=>"Falhas",
-                'caminho'=>"/front/falha.php",
-                'permissao'=>1
-            ]
-        ],
         'permissao' => 1,
         'funcoes' => [
                 'create'=>1,
@@ -75,6 +87,11 @@ $modulos=[
                 'permissao'=>1
             ],
             [
+                'nome'=>"Procedimentos",
+                'caminho'=>"/front/procedimento.php",
+                'permissao'=>0
+            ],
+            [
                 'nome'=>"Relatório Procedimentos Falhas",
                 'caminho'=>"/front/rel_procediments_falha.php",
                 'permissao'=>1
@@ -90,23 +107,6 @@ $modulos=[
                 'procedimentosFalhas'=>1,
                 'procedimentoFalhaEquipamento'=>0,
                 'readLazy'=>1,
-            ]
-    ],
-    "UsuarioController"=>[
-        'tela'=>[
-            [
-                'nome'=>"Usuários",
-                'caminho'=>"/front/usuario.php",
-                'permissao'=>1
-            ]
-        ],
-        'permissao' => 1,
-        'funcoes' => [
-                'create'=>1,
-                'read'=>1,
-                'getId'=>1,
-                'update'=>1,
-                'delete'=>1
             ]
     ],
 ];
