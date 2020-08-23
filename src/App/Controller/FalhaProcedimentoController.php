@@ -14,6 +14,7 @@ class FalhaProcedimentoController {
 
     function create($data){
         
+
         return $this->model->create($data);
     }
 

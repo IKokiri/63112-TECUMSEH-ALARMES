@@ -115,11 +115,12 @@ class FalhaProcedimentoModel extends Model{
         $this->populate($data);
 
         $sql = "SELECT * FROM ".$this->table." 
-        WHERE `id` = :id;";
+        WHERE `id_falha` = :id_falha AND `ordem` = :ordem;";
 
         $query = $this->conn->prepare($sql);
 
-        $query->bindValue(':id', $this->id, PDO::PARAM_STR);
+        $query->bindValue(':id_falha', $this->id_falha, PDO::PARAM_STR);    
+        $query->bindValue(':ordem', $this->ordem, PDO::PARAM_STR);    
 
         $result = Database::executa($query);   
 
@@ -166,14 +167,15 @@ class FalhaProcedimentoModel extends Model{
                 `ordem` = :ordem,
                 `procedimento` = :procedimento,
                 `editado` = curtime()
-                WHERE `id` = :id;";
+                WHERE `id_falha` = :id_falha_o AND `ordem` = :ordem_o;";
 
         $query = $this->conn->prepare($sql);
         
-        $query->bindValue(':id', $this->id, PDO::PARAM_STR);
         $query->bindValue(':id_falha', $this->id_falha, PDO::PARAM_STR);        
         $query->bindValue(':ordem', $this->ordem, PDO::PARAM_STR);        
         $query->bindValue(':procedimento', $this->procedimento, PDO::PARAM_STR);  
+        $query->bindValue(':id_falha_o', $this->id_falha_o, PDO::PARAM_STR);    
+        $query->bindValue(':ordem_o', $this->ordem_o, PDO::PARAM_STR);    
       
         $result = Database::executa($query);   
 

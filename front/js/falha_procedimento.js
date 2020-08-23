@@ -47,23 +47,26 @@ function carregar_campos(){
     let id_falha = document.querySelector("#id_falha").value;
     let ordem = document.querySelector("#ordem").value;
     let procedimento = document.querySelector("#procedimento").value;
-    let id = document.querySelector("#id").value;
+    let id_falha_o = document.querySelector("#id_falha_o").value;
+    let ordem_o = document.querySelector("#ordem_o").value;
+    
 
     formData.append('id_falha', id_falha);
     formData.append('ordem', ordem);
     formData.append('procedimento', procedimento);
-    formData.append('id', id);
+    formData.append('id_falha_o', id_falha_o);
+    formData.append('ordem_o', ordem_o);
 
     return formData;
 }
 
 function limpar_campos(){
 
-    
     let id_falha = document.querySelector("#id_falha").value = "";
     let ordem = document.querySelector("#ordem").value = "";
     let procedimento = document.querySelector("#procedimento").value = "";
-    let id = document.querySelector("#id").value = "";
+    let ordem_o = document.querySelector("#ordem_o").value = "";
+    let id_falha_o = document.querySelector("#id_falha_o").value = "";
 
 }
 
@@ -72,13 +75,14 @@ function preencher_form(data){
     let id_falha = data.id_falha;
     let ordem = data.ordem;
     let procedimento = data.procedimento;
-    let id = data.id;
+    
     
     $('#modal_principal').modal('show')
     document.querySelector("#id_falha").value = id_falha
     document.querySelector("#ordem").value = ordem
     document.querySelector("#procedimento").value = procedimento
-    document.querySelector("#id").value = id
+    document.querySelector("#id_falha_o").value = id_falha
+    document.querySelector("#ordem_o").value = ordem
     
 }
 
@@ -87,14 +91,16 @@ $(document).on('click','#abrir_modal',function(){
 })
 
 $('#modal_principal').on('hidden.bs.modal', function () {
-    document.querySelector("#id").value = ""
+    document.querySelector("#id_falha_o").value = ""
+    document.querySelector("#ordem_o").value = ""
   })
 
 $(document).on('click','#salvar',function(){
     formData = carregar_campos()
-    id = formData.get("id");
-
-    if(id){
+    id_falha_o = formData.get("id_falha_o");
+    ordem_o = formData.get("ordem_o");
+    
+    if(id_falha_o && ordem_o){
         update(formData)
     }else{
         criar(formData)
@@ -104,11 +110,12 @@ $(document).on('click','#salvar',function(){
 
 $(document).on('click','#remover',function(){
     
-    id = $(this).attr("data-id");
+    id_falha = $(this).attr("data-id_falha");
+    id_ordem = $(this).attr("data-id_ordem");
     
     var res = confirm("Deseja remover o registro?");
     if (res == true) {
-        remover(id);
+        remover(id_falha,id_ordem);
     } else {
     
     }
@@ -118,8 +125,9 @@ $(document).on('click','#remover',function(){
 $(document).on('click','#edit',function(){
 
     $('#modal_principal').modal('show')
-    id = $(this).attr("data-id");
-    edit(id);
+    id_falha = $(this).attr("data-id_falha_o");
+    ordem = $(this).attr("data-ordem_o");
+    edit(id_falha,ordem);
     
 })
 
@@ -145,8 +153,8 @@ function grid_principal(){
                     <td>${dados[linha].tag} - ${dados[linha].falha}</td>
                     <td>${dados[linha].ordem}</td>
                     <td>${dados[linha].procedimento}</td>
-                    <td class="text-center" data-id="${dados[linha].id}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
-                    <td class="text-center" data-id="${dados[linha].id}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
+                    <td class="text-center" data-ordem_o="${dados[linha].ordem}" data-id_falha_o="${dados[linha].id_falha}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
+                    <td class="text-center" data-ordem_o="${dados[linha].ordem}" data-id_falha_o="${dados[linha].id_falha}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
                 </tr>
             `
         }
@@ -174,12 +182,13 @@ function criar(formData){
         .catch(console.error);
 }
 
-function remover(id){
+function remover(id_falha,ordem){
     
     formData = new FormData();
     formData.append('class', controller);
     formData.append('method', 'delete');
-    formData.append('id', id);
+    formData.append('id_falha', id_falha);
+    formData.append('ordem', ordem);
     
         fetch(base_request,{
             method:'post',
@@ -192,12 +201,13 @@ function remover(id){
         .catch(console.error);
 }
 
-function edit(id){
+function edit(id_falha,ordem){
 
     formData = new FormData();
     formData.append('class', controller);
     formData.append('method', 'getId');
-    formData.append('id', id);
+    formData.append('id_falha', id_falha);
+    formData.append('ordem', ordem);
     
         fetch(base_request,{
             method:'post',
