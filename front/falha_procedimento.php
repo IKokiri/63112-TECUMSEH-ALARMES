@@ -18,8 +18,8 @@
             <th scope="col">Falha</th>
             <th scope="col">Ordem</th>
             <th scope="col">Procedimento</th>
-            <th scope="col">Alterar</th>
-            <th scope="col">Remover</th>
+            <th class="text-center" scope="col">Alterar</th>
+            <th class="text-center" scope="col">Remover</th>
           </tr>
         </thead>
         <tbody class="grid">

@@ -17,8 +17,8 @@
           <tr>
             <th scope="col">TAG</th>
             <th scope="col">Falha</th>
-            <th scope="col">Alterar</th>
-            <th scope="col">Remover</th>
+            <th class="text-center" scope="col">Alterar</th>
+            <th class="text-center" scope="col">Remover</th>
           </tr>
         </thead>
         <tbody class="grid">

@@ -7,10 +7,10 @@
 <body>
     
 <div class="text-center">
-    <button id="btnExport" type="button" class="btn btn-link">
-      <img src="./icons/xlsx.png" alt="Exportar">
-    </button>
-  </div>
+  <button id="btnExport" type="button" class="btn btn-link">
+    <img src="./icons/xlsx.png" alt="Exportar">
+  </button>
+</div>
 
 <table class="table col-10 offset-1 table-hover table-bordered">
         <thead>
