@@ -12,7 +12,10 @@
       </button>
     </div>
     
-    
+    <div id="base_alert" class="col-10 offset-1 ">
+ 
+    </div>
+   
 
     <table class="table col-10 offset-1 table-hover table-bordered">
         <thead>

@@ -177,6 +177,9 @@ function criar(formData){
         })
         .then(response => response.json())
         .then(data => {        
+            if(data.MSN){
+                base_erro(data.MSN.errorInfo[0]);
+            }   
             inicio()
         })
         .catch(console.error);
@@ -196,6 +199,9 @@ function remover(id_falha,ordem){
         })
         .then(response => response.json())
         .then(data => {     
+            if(data.MSN){
+                base_erro(data.MSN.errorInfo[0]);
+            }   
             inicio()
         })
         .catch(console.error);
@@ -215,6 +221,9 @@ function edit(id_falha,ordem){
         })
         .then(response => response.json())
         .then(data => {        
+            if(data.MSN){
+                base_erro(data.MSN.errorInfo[0]);
+            }   
             $linha = data.result_array[0];
             preencher_form($linha);
 
@@ -232,7 +241,10 @@ function update(formData){
             body: formData
         })
         .then(response => response.json())
-        .then(data => {     
+        .then(data => {       
+            if(data.MSN){
+                base_erro(data.MSN.errorInfo[0]);
+            } 
             inicio()
         })
         .catch(console.error);

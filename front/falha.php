@@ -10,7 +10,11 @@
       <button id="abrir_modal" type="button" class="btn btn-link">
         <img src="./icons/plus.png" alt="Adicionar Novo">
       </button>
-    </div>
+    </div>  
+    
+    <div id="base_alert" class="col-10 offset-1 ">
+ 
+ </div>
 
     <table class="table col-10 offset-1 table-hover table-bordered">
         <thead>
