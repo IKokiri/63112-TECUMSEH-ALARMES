@@ -1,9 +1,9 @@
 function base_erro(erro){
     err = ""
-    if(erro == 23000){
+    if(erro == 1062){
         
         err = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Atenção!</strong> O registro já existe.
+        <strong>Atenção!</strong> #001 - O registro já existe.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -11,6 +11,17 @@ function base_erro(erro){
 
         
     }
+    if(erro == 1451){
+        
+      err = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Atenção!</strong> #002 - O registro está sendo usado em outro módulo. É necessário desfazer todos os vinculos com este registro. 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>`;
+
+      
+  }
 
     document.querySelector("#base_alert").innerHTML = err;
 }
