@@ -85,11 +85,12 @@ class EquipamentoFalhaModel extends Model{
         $this->populate($data);
 
         $sql = "SELECT * FROM ".$this->table." 
-        WHERE `id` = :id;";
+        WHERE `id_equipamento` = :id_equipamento AND `id_falha` = :id_falha;";
 
         $query = $this->conn->prepare($sql);
 
-        $query->bindValue(':id', $this->id, PDO::PARAM_STR);
+        $query->bindValue(':id_equipamento', $this->id_equipamento_o, PDO::PARAM_STR);
+        $query->bindValue(':id_falha', $this->id_falha_o, PDO::PARAM_STR);
 
         $result = Database::executa($query);   
 
@@ -136,11 +137,12 @@ class EquipamentoFalhaModel extends Model{
                 `id_falha` = :id_falha,
                 `observacao` = :observacao,
                 `editado` = curtime()
-                WHERE `id` = :id;";
+                WHERE `id_equipamento` = :id_equipamento_o AND `id_falha` = :id_falha_o;";
 
         $query = $this->conn->prepare($sql);
-        
-        $query->bindValue(':id', $this->id, PDO::PARAM_STR);
+
+        $query->bindValue(':id_equipamento_o', $this->id_equipamento_o, PDO::PARAM_STR);
+        $query->bindValue(':id_falha_o', $this->id_falha_o, PDO::PARAM_STR);
         $query->bindValue(':id_equipamento', $this->id_equipamento, PDO::PARAM_STR);        
         $query->bindValue(':id_falha', $this->id_falha, PDO::PARAM_STR);  
         $query->bindValue(':observacao', $this->observacao, PDO::PARAM_STR);  
@@ -157,11 +159,12 @@ class EquipamentoFalhaModel extends Model{
         $this->populate($data);
 
         $sql = "DELETE FROM ".$this->table." 
-                    WHERE `id` = :id;";
+        WHERE `id_equipamento` = :id_equipamento_o AND `id_falha` = :id_falha_o;";
 
         $query = $this->conn->prepare($sql);
-        
-        $query->bindValue(':id', $this->id, PDO::PARAM_STR);
+
+        $query->bindValue(':id_equipamento_o', $this->id_equipamento_o, PDO::PARAM_STR);
+        $query->bindValue(':id_falha_o', $this->id_falha_o, PDO::PARAM_STR);
 
         $result = Database::executa($query);   
 

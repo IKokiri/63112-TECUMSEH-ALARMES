@@ -52,6 +52,15 @@ $modulos=[
                 'permissao'=>1
             ]
         ],
+        'permissao' => 1,
+        'funcoes' => [
+                'create'=>1,
+                'read'=>1,
+                'getId'=>1,
+                'update'=>1,
+                'delete'=>1
+            ]
+    ],
     "EquipamentoFalhaController"=>[
         'tela'=>[
             [
@@ -68,15 +77,6 @@ $modulos=[
                 'update'=>1,
                 'delete'=>1,
                 'readFalhasEquipamento'=>0
-            ]
-    ],
-        'permissao' => 1,
-        'funcoes' => [
-                'create'=>1,
-                'read'=>1,
-                'getId'=>1,
-                'update'=>1,
-                'delete'=>1
             ]
     ],
     "FalhaProcedimentoController"=>[

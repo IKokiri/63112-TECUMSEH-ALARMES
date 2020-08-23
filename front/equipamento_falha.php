@@ -54,7 +54,8 @@
               </div>
 
             </div>
-            <input type="hidden" id="id">
+            <input type="hidden" id="id_equipamento_o">
+            <input type="hidden" id="id_falha_o">
           </form>
           <!-- FORM -->
         </div>
