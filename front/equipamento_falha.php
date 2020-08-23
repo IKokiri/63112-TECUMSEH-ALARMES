@@ -6,18 +6,20 @@
 
 <body>
     
-    <button id="abrir_modal">
-        +
-    </button>
+<div class="text-center">
+      <button id="abrir_modal" type="button" class="btn btn-link">
+        <img src="./icons/plus.png" alt="Adicionar Novo">
+      </button>
+    </div>
 
-    <table class="table table-hover">
+    <table class="table col-10 offset-1 table-hover table-bordered">
         <thead>
           <tr>
             <th scope="col">Equipamento</th>
             <th scope="col">Falha</th>
             <th scope="col">Observação</th>
-            <th scope="col">Alterar</th>
-            <th scope="col">Remover</th>
+            <th class="text-center" scope="col">Alterar</th>
+            <th class="text-center" scope="col">Remover</th>
           </tr>
         </thead>
         <tbody class="grid">

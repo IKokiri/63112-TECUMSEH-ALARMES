@@ -181,8 +181,8 @@ function grid_principal(){
                     <td>${dados[linha].tag_equipamento} - ${dados[linha].equipamento}</td>
                     <td>${dados[linha].tag_falha} - ${dados[linha].falha}</td>
                     <td>${dados[linha].observacao}</td>
-                    <td data-id_equipamento_o="${dados[linha].id_equipamento}" data-id_falha_o="${dados[linha].id_falha}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
-                    <td data-id_equipamento_o="${dados[linha].id_equipamento}" data-id_falha_o="${dados[linha].id_falha}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
+                    <td class="text-center" data-id_equipamento_o="${dados[linha].id_equipamento}" data-id_falha_o="${dados[linha].id_falha}" id="edit"><img src="./icons/001-pencil.png"  alt=""></td>
+                    <td class="text-center" data-id_equipamento_o="${dados[linha].id_equipamento}" data-id_falha_o="${dados[linha].id_falha}" id="remover"><img src="./icons/002-delete.png"  alt=""></td>
                 </tr>
             `
         }
