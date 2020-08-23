@@ -189,11 +189,13 @@ class FalhaProcedimentoModel extends Model{
         $this->populate($data);
 
         $sql = "DELETE FROM ".$this->table." 
-                    WHERE `id` = :id;";
+                    WHERE `id_falha` = :id_falha AND `ordem` = :ordem;";
 
         $query = $this->conn->prepare($sql);
         
-        $query->bindValue(':id', $this->id, PDO::PARAM_STR);
+        
+        $query->bindValue(':id_falha', $this->id_falha, PDO::PARAM_STR);    
+        $query->bindValue(':ordem', $this->ordem, PDO::PARAM_STR);  
 
         $result = Database::executa($query);   
 

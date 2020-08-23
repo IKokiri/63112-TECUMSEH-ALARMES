@@ -110,8 +110,8 @@ $(document).on('click','#salvar',function(){
 
 $(document).on('click','#remover',function(){
     
-    id_falha = $(this).attr("data-id_falha");
-    id_ordem = $(this).attr("data-id_ordem");
+    id_falha = $(this).attr("data-id_falha_o");
+    id_ordem = $(this).attr("data-ordem_o");
     
     var res = confirm("Deseja remover o registro?");
     if (res == true) {
