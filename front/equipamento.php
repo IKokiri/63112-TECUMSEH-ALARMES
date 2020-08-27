@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<title>Equipamentos</title>
 <body>
     
    

@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<title>Relatório de Procedimentos</title>
 <body>
     
 <div class="text-center">

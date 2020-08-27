@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <br>
+
+<title>Procedimentos</title>
 <body>
     <div class="col-10 offset-1">
     <form>

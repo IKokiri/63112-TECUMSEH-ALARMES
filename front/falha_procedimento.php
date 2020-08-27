@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<title>Procedimentos Falha</title>
 <body>
     
 <div class="text-center">
