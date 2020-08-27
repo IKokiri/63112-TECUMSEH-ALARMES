@@ -18,7 +18,7 @@ body{
 <div class="form-signin col-md-2 offset-5">
       <img class="mb-4" src="icons/k.png" alt="" width="72" height="72">
       <label for="inputEmail" class="sr-only">Usuário</label>
-      <input type="email" id="email" class="form-control" placeholder="Email" required="" autofocus="">
+      <input type="email" id="email" class="form-control" placeholder="Usuário" required="" autofocus="">
       <label for="inputPassword" class="sr-only">Senha</label>
       <input type="password" id="senha" class="form-control" placeholder="Senha" required="">
       <div class="checkbox mb-3">

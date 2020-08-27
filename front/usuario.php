@@ -3,7 +3,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<title>Usuários</title>
 <body>
     
     <div class="text-center">
@@ -16,7 +16,6 @@
  
     </div>
    
-
     <table class="table col-10 offset-1 table-hover table-bordered">
         <thead>
           <tr>
