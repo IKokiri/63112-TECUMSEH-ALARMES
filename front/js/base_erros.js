@@ -8,8 +8,6 @@ function base_erro(erro){
           <span aria-hidden="true">&times;</span>
           </button>
         </div>`;
-
-        
     }
 
     if(erro == 1451){
@@ -19,9 +17,7 @@ function base_erro(erro){
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
-      </div>`;
-
-      
+      </div>`; 
   }
 
   if(erro == "authInvalido"){
@@ -32,8 +28,6 @@ function base_erro(erro){
       <span aria-hidden="true">&times;</span>
       </button>
     </div>`;
-
-    
 }
 
     document.querySelector("#base_alert").innerHTML = err;
