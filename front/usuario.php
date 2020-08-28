@@ -44,12 +44,12 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Usuário</label>
-                <input type="text" class="form-control" id="email">
+                <input type="text" class="form-control" id="email" maxlength="10">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Senha</label>
-                <input type="password" class="form-control" id="senha">
+                <input type="password" class="form-control" id="senha" maxlength="15">
               </div>
 
               <div class="form-group col-md-6">

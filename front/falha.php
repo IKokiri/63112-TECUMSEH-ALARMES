@@ -46,12 +46,12 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">TAG</label>
-                <input type="text" class="form-control" id="tag">
+                <input type="text" class="form-control" id="tag" maxlength="10">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Falha</label>
-                <input type="text" class="form-control" id="falha">
+                <input type="text" class="form-control" id="falha"  maxlength="20">
               </div>
               
             </div>

@@ -57,7 +57,7 @@
 
               <div class="form-group col-md-12">
                 <label for="inputEmail4">Observação</label>
-                <textarea class="form-control" name="observacao" id="observacao"></textarea>
+                <textarea class="form-control" name="observacao" id="observacao" maxlength="250"></textarea>
               </div>
 
             </div>
