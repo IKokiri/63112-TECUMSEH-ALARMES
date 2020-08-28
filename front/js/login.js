@@ -43,6 +43,8 @@ function getLogin(formData){
     .then(data => {     
         if(data.count==1)   
             window.location.href = `${base_front}/procedimento.php`; 
+        else
+            base_erro("authInvalido");
     })
     .catch(console.error);
 }

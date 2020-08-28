@@ -15,6 +15,10 @@ body{
 </style>
 <body class="text-center">
 
+<div id="base_alert" class="col-10 offset-1 ">
+ 
+ </div>
+
 <div class="form-signin col-md-2 offset-5">
       <img class="mb-4" src="icons/k.png" alt="" width="72" height="72">
       <label for="inputEmail" class="sr-only">Usuário</label>

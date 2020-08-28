@@ -8,7 +8,7 @@
 <body>
     
    
-<div class="text-center">
+    <div class="text-center">
       <button id="abrir_modal" type="button" class="btn btn-link">
         <img src="./icons/plus.png" alt="Adicionar Novo">
       </button>
