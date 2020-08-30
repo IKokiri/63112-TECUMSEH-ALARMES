@@ -41,6 +41,7 @@ CREATE TABLE `equipamento_falhas` (
 
 LOCK TABLES `equipamento_falhas` WRITE;
 /*!40000 ALTER TABLE `equipamento_falhas` DISABLE KEYS */;
+INSERT INTO `equipamento_falhas` VALUES (19,16,'asd','2020-08-23 11:42:15',NULL);
 /*!40000 ALTER TABLE `equipamento_falhas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +60,7 @@ CREATE TABLE `equipamentos` (
   `editado` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tag_UNIQUE` (`tag`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,6 +97,7 @@ CREATE TABLE `falha_procedimentos` (
 
 LOCK TABLES `falha_procedimentos` WRITE;
 /*!40000 ALTER TABLE `falha_procedimentos` DISABLE KEYS */;
+INSERT INTO `falha_procedimentos` VALUES (16,1,'fazer','2020-08-23 11:42:04',NULL),(16,2,'123','2020-08-29 19:35:49',NULL),(16,3,'123123','2020-08-29 19:35:59',NULL),(16,4,'213123','2020-08-29 19:35:53',NULL),(16,5,'dfsf','2020-08-29 19:36:09',NULL),(16,6,'6dfgdfgdfg','2020-08-29 19:36:13','2020-08-29 19:36:23'),(16,7,'sdfsdfsdf','2020-08-29 19:36:18',NULL),(16,8,'dfgdfgd','2020-08-29 19:36:29',NULL),(16,9,'sdfsdfsdf','2020-08-29 19:36:34',NULL),(16,10,'sdfsdfs','2020-08-29 19:36:39',NULL),(16,11,'sdfsdf','2020-08-29 19:36:42',NULL);
 /*!40000 ALTER TABLE `falha_procedimentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +116,7 @@ CREATE TABLE `falhas` (
   `editado` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tag_UNIQUE` (`tag`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,6 +125,7 @@ CREATE TABLE `falhas` (
 
 LOCK TABLES `falhas` WRITE;
 /*!40000 ALTER TABLE `falhas` DISABLE KEYS */;
+INSERT INTO `falhas` VALUES (16,'f','f','2020-08-23 11:41:56',NULL);
 /*!40000 ALTER TABLE `falhas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,7 +145,7 @@ CREATE TABLE `usuarios` (
   `permissao` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-23 11:40:58
+-- Dump completed on 2020-08-30  9:05:13

@@ -6,7 +6,7 @@ require_once "./vendor/autoload.php";
 
 $login = new LoginController();
 $logado = $login->verificarLogado();
-
+$base_acessos = "/63112-TECUMSEH-ALARMES/";
 $dadosLogado = $logado['result_array'][0];
 
 $modulos=[
@@ -14,7 +14,7 @@ $modulos=[
         'tela'=>[
             [
                 'nome'=>"Usuários",
-                'caminho'=>"/front/usuario.php",
+                'caminho'=>"$base_acessos/front/usuario.php",
                 'permissao'=>1
             ]
         ],
@@ -31,7 +31,7 @@ $modulos=[
         'tela'=>[
             [
                 'nome'=>"Equipamentos",
-                'caminho'=>"/front/equipamento.php",
+                'caminho'=>"$base_acessos/front/equipamento.php",
                 'permissao'=>1
             ]
         ],
@@ -48,7 +48,7 @@ $modulos=[
         'tela'=>[
             [
                 'nome'=>"Falhas",
-                'caminho'=>"/front/falha.php",
+                'caminho'=>"$base_acessos/front/falha.php",
                 'permissao'=>1
             ]
         ],
@@ -65,7 +65,7 @@ $modulos=[
         'tela'=>[
             [
                 'nome'=>"Falhas do Equipamento",
-                'caminho'=>"/front/equipamento_falha.php",
+                'caminho'=>"$base_acessos/front/equipamento_falha.php",
                 'permissao'=>1
             ]
         ],
@@ -83,17 +83,17 @@ $modulos=[
         'tela'=>[
             [
                 'nome'=>"Procedimento Falhas",
-                'caminho'=>"/front/falha_procedimento.php",
+                'caminho'=>"$base_acessos/front/falha_procedimento.php",
                 'permissao'=>1
             ],
             [
                 'nome'=>"Procedimentos",
-                'caminho'=>"/front/procedimento.php",
+                'caminho'=>"$base_acessos/front/procedimento.php",
                 'permissao'=>0
             ],
             [
                 'nome'=>"Relatório Procedimentos Falhas",
-                'caminho'=>"/front/rel_procediments_falha.php",
+                'caminho'=>"$base_acessos/front/rel_procediments_falha.php",
                 'permissao'=>1
             ]
         ],

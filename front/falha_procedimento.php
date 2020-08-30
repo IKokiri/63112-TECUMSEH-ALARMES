@@ -53,12 +53,12 @@
 
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Ordem</label>
-                <input type="text" class="form-control" id="ordem">
+                <input type="number" class="form-control" id="ordem">
               </div>
 
               <div class="form-group col-md-12">
                 <label for="inputEmail4">Procedimento</label>
-                <textarea class="form-control" name="procedimento" id="procedimento"></textarea>
+                <textarea class="form-control" name="procedimento" id="procedimento" maxlength="250"></textarea>
               </div>
               
             </div>
