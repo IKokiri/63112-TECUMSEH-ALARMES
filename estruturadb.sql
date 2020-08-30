@@ -41,7 +41,6 @@ CREATE TABLE `equipamento_falhas` (
 
 LOCK TABLES `equipamento_falhas` WRITE;
 /*!40000 ALTER TABLE `equipamento_falhas` DISABLE KEYS */;
-INSERT INTO `equipamento_falhas` VALUES (19,16,'asd','2020-08-23 11:42:15',NULL);
 /*!40000 ALTER TABLE `equipamento_falhas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,7 +68,6 @@ CREATE TABLE `equipamentos` (
 
 LOCK TABLES `equipamentos` WRITE;
 /*!40000 ALTER TABLE `equipamentos` DISABLE KEYS */;
-INSERT INTO `equipamentos` VALUES (19,'e','e','2020-08-23 11:29:29',NULL);
 /*!40000 ALTER TABLE `equipamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +95,6 @@ CREATE TABLE `falha_procedimentos` (
 
 LOCK TABLES `falha_procedimentos` WRITE;
 /*!40000 ALTER TABLE `falha_procedimentos` DISABLE KEYS */;
-INSERT INTO `falha_procedimentos` VALUES (16,1,'fazer','2020-08-23 11:42:04',NULL),(16,2,'123','2020-08-29 19:35:49',NULL),(16,3,'123123','2020-08-29 19:35:59',NULL),(16,4,'213123','2020-08-29 19:35:53',NULL),(16,5,'dfsf','2020-08-29 19:36:09',NULL),(16,6,'6dfgdfgdfg','2020-08-29 19:36:13','2020-08-29 19:36:23'),(16,7,'sdfsdfsdf','2020-08-29 19:36:18',NULL),(16,8,'dfgdfgd','2020-08-29 19:36:29',NULL),(16,9,'sdfsdfsdf','2020-08-29 19:36:34',NULL),(16,10,'sdfsdfs','2020-08-29 19:36:39',NULL),(16,11,'sdfsdf','2020-08-29 19:36:42',NULL);
 /*!40000 ALTER TABLE `falha_procedimentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,7 +151,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (12,'rn','rn','2020-08-16 12:23:38',NULL,1),(14,'la','la','2020-08-16 17:38:09',NULL,0),(15,'RM','RM','2020-08-17 09:00:24',NULL,0),(45,'lz','lz','2020-08-23 11:34:02',NULL,0);
+INSERT INTO `usuarios` VALUES (12,'tecumseh','!@TEc@#10','2020-08-16 12:23:38',NULL,1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -167,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-30  9:05:13
+-- Dump completed on 2020-08-30 17:49:15
