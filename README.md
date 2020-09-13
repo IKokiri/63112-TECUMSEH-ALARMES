@@ -22,3 +22,4 @@ alterar arquivo
 C:\xampp\htdocs\63112-TECUMSEH-ALARMES\src\App\DAO\InfoDB.php
 -----
 Copiar pasta vendor
+-----

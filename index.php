@@ -6,8 +6,8 @@ require_once "./vendor/autoload.php";
 
 $login = new LoginController();
 $logado = $login->verificarLogado();
-// $base_acessos = "/63112-TECUMSEH-ALARMES";
-$base_acessos = "";
+ $base_acessos = "/63112-TECUMSEH-ALARMES";
+//$base_acessos = "";
 $dadosLogado = $logado['result_array'][0];
 
 $modulos=[
