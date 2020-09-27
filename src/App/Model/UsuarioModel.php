@@ -9,7 +9,7 @@ use PDO;
 
 class UsuarioModel extends Model{
 
-    private $table = "`tecumsehalarmes63112`.`usuarios`";
+    private $table = "usuarios";
     private $model = "UsuarioModel";
 
     function read(){
@@ -32,7 +32,7 @@ class UsuarioModel extends Model{
         $this->populate($data);
 
         $sql = "SELECT * FROM ".$this->table." 
-        WHERE `id` = :id;";
+        WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
 
@@ -49,7 +49,7 @@ class UsuarioModel extends Model{
         
         $this->populate($data);
 
-        $sql = "SELECT * FROM tecumsehalarmes63112.usuarios
+        $sql = "SELECT * FROM usuarios
         WHERE email = :email and senha = :senha";
 
         $query = $this->conn->prepare($sql);
@@ -69,18 +69,21 @@ class UsuarioModel extends Model{
         
         $this->populate($data);
         
-        $sql = "INSERT INTO ".$this->table." 
-                    (`email`,
-                    `senha`,
-                    `permissao`,
-                    `criado`)
-                    VALUES
-                    (:email,
-                    :senha,
-                    :permissao,
-                    curtime())";
+        $sql = "INSERT INTO ".$this->table."
+                        (
+                        email
+                        ,senha
+                        ,criado
+                        ,permissao)
+                VALUES
+                        (
+                        :email,
+                        :senha,
+                        CURRENT_TIMESTAMP,
+                        :permissao
+                        )";
 
-        $query = $this->conn->prepare($sql);
+        $query = $this->conn->prepare($sql);  
         
         $query->bindValue(':email', $this->email, PDO::PARAM_STR);
         $query->bindValue(':senha', $this->senha, PDO::PARAM_STR);
@@ -99,11 +102,11 @@ class UsuarioModel extends Model{
 
         $sql = "UPDATE ".$this->table." 
                 SET
-                `email` = :email,
-                `senha` = :senha,
-                `permissao` = :permissao,                 
-                `editado` = curtime()
-                WHERE `id` = :id;";
+                email = :email,
+                senha = :senha,
+                permissao = :permissao,                 
+                editado = CURRENT_TIMESTAMP
+                WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
         
@@ -123,8 +126,8 @@ class UsuarioModel extends Model{
 
         $this->populate($data);
 
-        $sql = "DELETE FROM ".$this->table." 
-                    WHERE `id` = :id;";
+       $sql = "DELETE FROM ".$this->table." 
+                    WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
         
@@ -141,7 +144,7 @@ class UsuarioModel extends Model{
 
         $this->populate($data);
 
-        $sql = "SELECT * FROM tecumsehalarmes63112.usuarios
+       $sql = "SELECT * FROM usuarios
         WHERE email = :email and senha = :senha and id = :id and permissao = :permissao";
 
         $query = $this->conn->prepare($sql);

@@ -9,7 +9,7 @@ use PDO;
 
 class EquipamentoModel extends Model{
 
-    private $table = "`tecumsehalarmes63112`.`equipamentos`";
+    private $table = "equipamentos";
     private $model = "EquipamentoModel";
 
     function read(){
@@ -31,7 +31,7 @@ class EquipamentoModel extends Model{
         $this->populate($data);
 
         $sql = "SELECT * FROM ".$this->table." 
-        WHERE `id` = :id;";
+        WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
 
@@ -49,13 +49,15 @@ class EquipamentoModel extends Model{
         $this->populate($data);
         
         $sql = "INSERT INTO ".$this->table." 
-                    (`tag`,
-                    `equipamento`,
-                    `criado`)
+                    (
+                    tag,
+                    equipamento,
+                    criado)
                     VALUES
-                    (:tag,
+                    (
+                    :tag,
                     :equipamento,
-                    curtime())";
+                    CURRENT_TIMESTAMP)";
 
         $query = $this->conn->prepare($sql);
         
@@ -75,10 +77,10 @@ class EquipamentoModel extends Model{
 
         $sql = "UPDATE ".$this->table." 
                 SET
-                `tag` = :tag,
-                `equipamento` = :equipamento,
-                `editado` = curtime()
-                WHERE `id` = :id;";
+                tag = :tag,
+                equipamento = :equipamento,
+                editado = CURRENT_TIMESTAMP
+                WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
         
@@ -98,7 +100,7 @@ class EquipamentoModel extends Model{
         $this->populate($data);
 
         $sql = "DELETE FROM ".$this->table." 
-                    WHERE `id` = :id;";
+                    WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
         

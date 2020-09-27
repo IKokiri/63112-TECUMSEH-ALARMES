@@ -21,6 +21,31 @@ class Database extends InfoDB
      * DEFINIDA COMO STATICA PARA SEJA ACESSADA DE QUALQUER LUGAR DO SOFTWARE
      */
     private static $con = null;
+    private $host = "DESKTOP-BLSE21H\SQLEXPRESS";
+    private $database = "tecumsehalarmes63112";
+    private $user = "sa";
+    private $password = "Tecumseh@2020";
+    private $driver = "sqlsrv";
+
+    function getHost(){
+        return $this->host;
+    }
+    
+    function getDatabase(){
+        return $this->database;
+    }
+
+    function getUser(){
+        return $this->user;
+    }
+    
+    function getPassword(){
+        return $this->password;
+    }   
+
+    function getDriver(){
+        return $this->driver;
+    }
 
     /**
      * METODO ACESSOR ALTERADO PARA VERIFICAR SE JA EXISTE UMA INSTANCIA DO
@@ -48,6 +73,7 @@ class Database extends InfoDB
         /**
          * RETORNA O OBJETO DE CONEXAO COM O BANCO
          */
+        
         return self::$con;
     }
 
@@ -57,29 +83,24 @@ class Database extends InfoDB
      */
     private function connect()
     {
+        
+        $pdoConfig  = $this->driver . ":". "Server=" . $this->host . ";";
+       $pdoConfig .= "Database=".$this->database.";";
 
-        /**
-         * A TENTATIVA DE CRIAR UM OBJETO COM A CONEXAO DO BANCO É FEITA
-         */
         try {
-            /**
-             * SALVA NA VARIAVEL ESTATICA O OBJETO REFERENTE A CONEXÃO COM O BANCO.
-             * AS VARIAVEIS QUE SAO USADAS PARA CONEXAO SÃO DA CLASSE PAI
-             */
-            self::$con = new PDO('mysql:host=' . $this->getHost() . ';dbname=' . $this->getDatabase() . '', $this->getUser(), $this->getPassword(), array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
-            /**
-             * DEFINE O TIPO DE MANIPULAÇÃO DE ERRO SERÁ USADO PELO PDO
-             */
-            self::$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            /**
-             * CAPTURA O ERRO, SE GERADO
-             */
-        } catch (\PDOException $error) {
-            /**
-             * O ERRO É IMPRESSO NA TELA
-             */
-            echo $error->getMessage();
-        }
+            
+            if(!isset(self::$con)){
+                
+                self::$con =  new PDO($pdoConfig, $this->user, $this->password);
+                self::$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            }
+            
+         } catch (PDOException $e) {
+            $mensagem = "Drivers disponiveis: " . implode(",", PDO::getAvailableDrivers());
+            $mensagem .= "\nErro: " . $e->getMessage();
+            
+            throw new Exception($mensagem);
+         }
     }
 
     /**

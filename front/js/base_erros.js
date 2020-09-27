@@ -1,6 +1,6 @@
 function base_erro(erro){
     err = ""
-    if(erro == 1062){
+    if(erro == 2627){
         
         err = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>Atenção!</strong> #001 - O registro já existe.
@@ -10,7 +10,7 @@ function base_erro(erro){
         </div>`;
     }
 
-    if(erro == 1451){
+    if(erro == 547){
         
       err = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
       <strong>Atenção!</strong> #002 - O registro está sendo usado em outro módulo. É necessário desfazer todos os vinculos com este registro. 

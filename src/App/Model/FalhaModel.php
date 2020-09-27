@@ -9,7 +9,7 @@ use PDO;
 
 class FalhaModel extends Model{
 
-    private $table = "`tecumsehalarmes63112`.`falhas`";
+    private $table = "falhas";
     private $model = "FalhaModel";
 
     function read(){
@@ -31,7 +31,7 @@ class FalhaModel extends Model{
         $this->populate($data);
 
         $sql = "SELECT * FROM ".$this->table." 
-        WHERE `id` = :id;";
+        WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
 
@@ -49,13 +49,15 @@ class FalhaModel extends Model{
         $this->populate($data);
         
         $sql = "INSERT INTO ".$this->table." 
-                    (`tag`,
-                    `falha`,
-                    `criado`)
+                    (
+                    tag,
+                    falha,
+                    criado)
                     VALUES
-                    (:tag,
+                    (
+                    :tag,
                     :falha,
-                    curtime())";
+                    CURRENT_TIMESTAMP)";
 
         $query = $this->conn->prepare($sql);
         
@@ -75,10 +77,10 @@ class FalhaModel extends Model{
 
         $sql = "UPDATE ".$this->table." 
                 SET
-                `tag` = :tag,
-                `falha` = :falha,
-                `editado` = curtime()
-                WHERE `id` = :id;";
+                tag = :tag,
+                falha = :falha,
+                editado = CURRENT_TIMESTAMP
+                WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
         
@@ -98,7 +100,7 @@ class FalhaModel extends Model{
         $this->populate($data);
 
         $sql = "DELETE FROM ".$this->table." 
-                    WHERE `id` = :id;";
+                    WHERE id = :id;";
 
         $query = $this->conn->prepare($sql);
         

@@ -2,14 +2,16 @@
 use App\Controller\LoginController;
 
 session_start();
+
 require_once "./vendor/autoload.php";
 
 $login = new LoginController();
+
 $logado = $login->verificarLogado();
+
  $base_acessos = "/63112-TECUMSEH-ALARMES";
 //$base_acessos = "";
 $dadosLogado = $logado['result_array'][0];
-
 $modulos=[
     "UsuarioController"=>[
         'tela'=>[
@@ -115,7 +117,6 @@ $modulos=[
 
 $request = $_REQUEST;
 $request['files'] = $_FILES;
-
 $class = $request['class'];
 $method = $request['method'];
 
@@ -123,7 +124,6 @@ if(!$logado['count']){
     $class= "LoginController";
     $method= "getLogin";
 }
-
 
 if($modulos[$class]['permissao'] > $dadosLogado['permissao'] && $modulos[$class]['funcoes'][$method] > $dadosLogado['permissao']){
     $result['permissoes'] = $modulos;
@@ -135,8 +135,8 @@ if($modulos[$class]['permissao'] > $dadosLogado['permissao'] && $modulos[$class]
 $namespace = "App\Controller\\".$class;
 $params = $request;
 $class = new $namespace;
-
 $result = call_user_func_array(array($class, $method), array($params));
+
 
 $result['permissaoLogado'] = $dadosLogado['permissao'];
 $result['user'] = $_SESSION['email'];

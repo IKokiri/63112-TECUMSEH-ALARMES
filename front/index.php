@@ -21,9 +21,9 @@ body{
 <div class="form-signin col-md-2 offset-5">
       <img class="mb-4" src="icons/k.png" alt="" width="72" height="72">
       <label for="inputEmail" class="sr-only">Usuário</label>
-      <input type="text" id="email" autocomplete="off" class="form-control" placeholder="Usuário" required="" autofocus="">
+      <input type="text" id="email" autocomplete="off" class="form-control" placeholder="Usuário" required="" autofocus="" value="tecumseh">
       <label for="inputPassword" class="sr-only">Senha</label>
-      <input type="password" id="senha" class="form-control" placeholder="Senha" required="">
+      <input type="password" id="senha" class="form-control" placeholder="Senha" required="" value="!@TEc@#10">
       <div class="checkbox mb-3">
       </div>
       <button class="btn btn-lg btn-primary btn-block" id="entrar">Entrar</button>

@@ -9,7 +9,7 @@ use PDO;
 
 class FalhaProcedimentoModel extends Model{
 
-    private $table = "`tecumsehalarmes63112`.`falha_procedimentos`";
+    private $table = "falha_procedimentos";
     private $model = "FalhaProcedimentoModel";
 
     function read(){
@@ -115,7 +115,7 @@ class FalhaProcedimentoModel extends Model{
         $this->populate($data);
 
         $sql = "SELECT * FROM ".$this->table." 
-        WHERE `id_falha` = :id_falha AND `ordem` = :ordem;";
+        WHERE id_falha = :id_falha AND ordem = :ordem;";
 
         $query = $this->conn->prepare($sql);
 
@@ -134,15 +134,16 @@ class FalhaProcedimentoModel extends Model{
         $this->populate($data);
         
         $sql = "INSERT INTO ".$this->table." 
-                    (`id_falha`,
-                    `ordem`,
-                    `procedimento`,
-                    `criado`)
+                    (
+                    id_falha,
+                    ordem,
+                    procedimento,
+                    criado)
                     VALUES
                     (:id_falha,
                     :ordem,
                     :procedimento,
-                    curtime())";
+                    CURRENT_TIMESTAMP)";
 
         $query = $this->conn->prepare($sql);
         
@@ -163,11 +164,11 @@ class FalhaProcedimentoModel extends Model{
 
         $sql = "UPDATE ".$this->table." 
                 SET
-                `id_falha` = :id_falha,
-                `ordem` = :ordem,
-                `procedimento` = :procedimento,
-                `editado` = curtime()
-                WHERE `id_falha` = :id_falha_o AND `ordem` = :ordem_o;";
+                id_falha = :id_falha,
+                ordem = :ordem,
+                procedimento = :procedimento,
+                editado = CURRENT_TIMESTAMP
+                WHERE id_falha = :id_falha_o AND ordem = :ordem_o;";
 
         $query = $this->conn->prepare($sql);
         
@@ -189,7 +190,7 @@ class FalhaProcedimentoModel extends Model{
         $this->populate($data);
 
         $sql = "DELETE FROM ".$this->table." 
-                    WHERE `id_falha` = :id_falha AND `ordem` = :ordem;";
+                    WHERE id_falha = :id_falha AND ordem = :ordem;";
 
         $query = $this->conn->prepare($sql);
         

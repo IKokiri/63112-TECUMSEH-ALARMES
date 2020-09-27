@@ -28,10 +28,12 @@ $(document).ready(function(){
               </li>`
             }
         }
+
         menus += `<li class="nav-item">
-                    <a class="nav-link text-danger" href="/front/">Sair</a>
+                    <a class="nav-link text-danger" href="${base_front}">Sair</a>
                 </li> `
-      document.querySelector(".menus").innerHTML = menus
+    
+        document.querySelector(".menus").innerHTML = menus
 
     })
     .catch(console.error);

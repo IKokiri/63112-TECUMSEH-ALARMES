@@ -8,7 +8,7 @@ use PDO;
 
 class EquipamentoFalhaModel extends Model{
 
-    private $table = "`tecumsehalarmes63112`.`equipamento_falhas`";
+    private $table = "equipamento_falhas";
     private $model = "EquipamentoFalhaModel";
 
     function read(){
@@ -58,7 +58,7 @@ class EquipamentoFalhaModel extends Model{
         $sql = "SELECT 
                     fal.id,fal.tag, fal.falha
                 FROM
-                    tecumsehalarmes63112.equipamento_falhas equ_fal
+                    equipamento_falhas equ_fal
                     INNER JOIN falhas fal
                         on equ_fal.id_falha = fal.id
                 WHERE
@@ -85,7 +85,7 @@ class EquipamentoFalhaModel extends Model{
         $this->populate($data);
 
         $sql = "SELECT * FROM ".$this->table." 
-        WHERE `id_equipamento` = :id_equipamento AND `id_falha` = :id_falha;";
+        WHERE id_equipamento = :id_equipamento AND id_falha = :id_falha;";
 
         $query = $this->conn->prepare($sql);
 
@@ -104,15 +104,16 @@ class EquipamentoFalhaModel extends Model{
         $this->populate($data);
         
         $sql = "INSERT INTO ".$this->table." 
-                    (`id_equipamento`,
-                    `id_falha`,
-                    `observacao`,
-                    `criado`)
+                    (
+                    id_equipamento,
+                    id_falha,
+                    observacao,
+                    criado)
                     VALUES
                     (:id_equipamento,
                     :id_falha,
                     :observacao,
-                    curtime())";
+                    CURRENT_TIMESTAMP)";
 
         $query = $this->conn->prepare($sql);
         
@@ -133,11 +134,11 @@ class EquipamentoFalhaModel extends Model{
 
         $sql = "UPDATE ".$this->table." 
                 SET
-                `id_equipamento` = :id_equipamento,
-                `id_falha` = :id_falha,
-                `observacao` = :observacao,
-                `editado` = curtime()
-                WHERE `id_equipamento` = :id_equipamento_o AND `id_falha` = :id_falha_o;";
+                id_equipamento = :id_equipamento,
+                id_falha = :id_falha,
+                observacao = :observacao,
+                editado = CURRENT_TIMESTAMP
+                WHERE id_equipamento = :id_equipamento_o AND id_falha = :id_falha_o;";
 
         $query = $this->conn->prepare($sql);
 
@@ -159,7 +160,7 @@ class EquipamentoFalhaModel extends Model{
         $this->populate($data);
 
         $sql = "DELETE FROM ".$this->table." 
-        WHERE `id_equipamento` = :id_equipamento_o AND `id_falha` = :id_falha_o;";
+        WHERE id_equipamento = :id_equipamento_o AND id_falha = :id_falha_o;";
 
         $query = $this->conn->prepare($sql);
 

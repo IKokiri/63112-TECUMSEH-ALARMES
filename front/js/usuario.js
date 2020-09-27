@@ -143,7 +143,8 @@ function criar(formData){
             body: formData
         })
         .then(response => response.json())
-        .then(data => {   
+        .then(data => {  
+             
             if(data.MSN){
                 base_erro(data.MSN.errorInfo[1]);
             }
