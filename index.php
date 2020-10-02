@@ -64,6 +64,24 @@ $modulos=[
                 'delete'=>1
             ]
     ],
+    "MensagemFalhaController"=>[
+        'tela'=>[
+            [
+                'nome'=>"Falhas Mensagens",
+                'caminho'=>"$base_acessos/front/falha_mensagem.php",
+                'permissao'=>1
+            ]
+        ],
+        'permissao' => 1,
+        'funcoes' => [
+                'create'=>1,
+                'read'=>1,
+                'readJoin'=>1,
+                'getId'=>1,
+                'update'=>1,
+                'delete'=>1
+            ]
+    ],
     "EquipamentoFalhaController"=>[
         'tela'=>[
             [

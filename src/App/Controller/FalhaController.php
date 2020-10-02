@@ -22,6 +22,16 @@ class FalhaController {
         return $this->model->read();
     }
 
+    function readJoin($data){
+        
+        return $this->model->readJoin();
+    }
+
+    function filter($data){
+        
+        return $this->model->filter($data);
+    }
+
     function getId($data){
         
         return $this->model->getId($data);

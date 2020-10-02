@@ -16,12 +16,17 @@
     <div id="base_alert" class="col-10 offset-1 ">
  
  </div>
+ 
+ <?php
+  include "buscar.php"
+?>
 
     <table class="table col-10 offset-1 table-hover table-bordered">
         <thead>
           <tr>
             <th scope="col">TAG</th>
             <th scope="col">Falha</th>
+            <th scope="col">Mensagem</th>
             <th class="text-center" scope="col">Alterar</th>
             <th class="text-center" scope="col">Remover</th>
           </tr>
@@ -52,6 +57,13 @@
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Falha</label>
                 <input type="text" class="form-control" id="falha"  maxlength="20">
+              </div>
+
+              <div class="form-group col-md-12">
+                <label for="inputEmail4">Mensagem</label>
+                
+                <select class="form-control col-md-12" id="id_mensagem" >
+                </select>
               </div>
               
             </div>

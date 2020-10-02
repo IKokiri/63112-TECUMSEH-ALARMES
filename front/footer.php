@@ -5,8 +5,8 @@
 <script src="./js/server.js"></script>
 <script src="./js/base_erros.js"></script>
 <script src="./js/nav.js"></script>
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="container text-center">
     <span class="text-muted">Kuttner do Brasil</span>
     </div>
-</footer>
+</footer> -->
